@@ -1,0 +1,165 @@
+/*Retirar todas as estilizações por padrão dos navegadores*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --bg-url: url(../assets/bg-mobile.jpg);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(../assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(../assets/bg-mobile-light.jpg);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --stroke-color: rgba(0, 0, 0, 0, 0.5);
+  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(../assets/sun.svg);
+}
+
+body {
+  background-image: url(../assets/bg-mobile.jpg);
+  background: var(--bg-url) no-repeat top center/cover;
+  /*Propriedade Short Hand, que otimiza as propriedades em 1 só
+  background-image: url(../assets/bg-mobile.jpg) no-repeat top center/cover;
+  */
+}
+/* Seletor universal: para todos os elementos do body*/
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+#container {
+  /*height: 712px; Não precisa de altura*/
+  width: 360px;
+  /*border: 1px solid green; Só pra visualizar melhor as caixas 
+  /*margin: auto; /*CENTRALIZAR UMA MEDIDA FIXA - Em todos os lados, menos em cima e embaixo por causa de uma regra CSS*/
+  margin: 56px auto 0;
+  padding-top: 56px;
+}
+
+#profile {
+  text-align: center; /*Para centralizar elementos inline, eles aceitam que seu pai (profile) usem text-align para alinhá-los do jeito que quiserem*/
+  padding: 24px; /*Para todos os lados - 2 propriedades: top e bottom,right e left - 3 proprieddes: top, right e left, bottom - 4 propriedades: padrão*/
+}
+
+#profile img {
+  /*display: block; /*Não dá pra usar display block no elemento pai (profile) e esperar que alinhe, pois o profike img é inline*/
+  width: 112px; /*No CSS geralmente não precisa colocar altura, só largura - porque a altura da caixa vai aumentando conforme o conteúdo - algumas coisas precisamos deixar FLUÍDAS (Para a rolagem da página, poucas coisas FIXAS*/
+  /*margin: auto; /*Não alinha em elementos inline */
+}
+
+#profile p {
+  font-weight: 500; /*Bold - um negrito de peso 500
+  font-size: 16px; Os navegadores já tem esse size por padrão, não precisa colocar*/
+  line-height: 24px; /*ALtura da linha*/
+  margin-top: 8px;
+}
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white url(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%; /*px != %*/
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  --webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+ul li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(1.5px solid var(--text-color));
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0px;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  --webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
