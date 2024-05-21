@@ -8,25 +8,25 @@
 :root {
   --text-color: white;
   --stroke-color: rgba(255, 255, 255, 0.5);
-  --bg-url: url(../assets/bg-mobile.jpg);
+  --bg-url: url(./assets/bg-mobile.jpg);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(255, 255, 255, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
-  --switch-bg-url: url(../assets/moon-stars.svg);
+  --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
 .light {
   --text-color: black;
-  --bg-url: url(../assets/bg-mobile-light.jpg);
+  --bg-url: url(./assets/bg-mobile-light.jpg);
   --surface-color: rgba(0, 0, 0, 0.05);
   --stroke-color: rgba(0, 0, 0, 0, 0.5);
   --surface-color-hover: rgba(255, 255, 255, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
-  --switch-bg-url: url(../assets/sun.svg);
+  --switch-bg-url: url(./assets/sun.svg);
 }
 
 body {
-  background-image: url(../assets/bg-mobile.jpg);
+  background-image: url(./assets/bg-mobile.jpg);
   background: var(--bg-url) no-repeat top center/cover;
   /*Propriedade Short Hand, que otimiza as propriedades em 1 só
   background-image: url(../assets/bg-mobile.jpg) no-repeat top center/cover;
